@@ -1,0 +1,10 @@
+#!/bin/bash
+args=$#
+if [[ $args -ge 5 ]]
+then
+    declare -a arrayy=("$@")
+    rev=$(printf '%s\n' "${arrayy[@]}" | tac | tr '\n' ' '; echo)
+    echo ${rev[@]}
+else
+    echo "Please enter atleast 5 arguments"
+fi
